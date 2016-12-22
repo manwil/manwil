@@ -1,0 +1,65 @@
+<div class="col-md-12 text-right"><button id="boton_atras" class="btn btn_afirmativo" ng-click="volver()" title="Ir atrás"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></button></div>
+<div class="col-md-12 text-center color_orange">INVENTARIO</div>
+<div class="col-md-12 margin_10"> 
+	
+	<form>
+	<div class="col-md-3 col-md-offset-9">
+		<label for="almacen_fecha">FECHA:</label>
+		<input type="text" name="alamacen_fecha" class="almacen_fe form-control">
+	</div>
+
+
+
+	<div class="col-md-12 margin_10"></div>
+	<div class="col-md-4">
+		<label for="almacen_producto">PRODUCTO:</label>
+		<select name="notaPedido_productoS" id="id_notaPedido_productoS"
+      	ng-options="option.nombre for option in datap.availableOptionsProducto track by option.id_producto"
+      	ng-model="selectedProducto" class="np_productoS form-control" ng-change="hasChangedProducto()">
+    	</select>
+    </div>
+
+
+	<div class="col-md-4">
+		<label for="almacen_peso">PESO:</label>
+		<input type="text" name="alamacen_peso" class="almacen_pe form-control" placeholder="0.00" ng-keyup="convertir_kg_barra()" ng-model = "u_kg">Kg.
+	</div>
+
+	<div class="col-md-4 text-right margin_10">
+		<button class="btn btn_afirmativo" ng-click="agregarAlmacen()" title="Agregar producto">AGREGAR AL ALMACEN</button>
+	</div>
+
+
+	<div class="col-md-12 margin_10"></div>
+	<!--<div class="col-md-3">
+		<label>Total de {{nombre_producto}} en almacen</label>
+		<input type="text" name="almacen_total" class="almacen_to" disabled="disabled">Kg.
+	</div>-->
+
+	<div class="col-md-12 margin_10 border_1"></div>
+	<div class="col-md-12 table-responsive">
+		<table class="table">
+			<thead>
+				<tr>
+					<th class="tamano_pedido text-center">Código de Producto</th>
+					<th class="tamano_pedido text-center">Nombre de Producto</th>
+					<th class="tamano_pedido text-center">Cantidad de Ingreso</th>
+					<th class="tamano_pedido text-center">Fecha de Ingreso</th>
+					<th class="tamano_pedido text-center">Elaborado</th>
+					<th class="tamano_pedido text-center">Eliminar</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="item in datoAlmacenProducto">
+					<td class="text-center">{{item.id_producto}}</td>
+					<td class="text-center">{{item.nombre_producto}}</td>
+					<td class="text-center">{{item.peso}} Kg.</td>
+					<td class="text-center">{{item.fecha}}</td>
+					<td class="text-center">{{item.usuario}}</td>
+					<td ng-click="almacen_eliminar(item.id_almacen)" class="text-center"><a href=""><span class="glyphicon glyphicon-remove elimina_css" aria-hidden="true"></span></a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	</form>
+</div>

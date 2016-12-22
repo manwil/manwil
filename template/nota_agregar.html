@@ -1,0 +1,153 @@
+<div class="col-md-12 text-right"><button id="boton_atras" class="btn btn_afirmativo" ng-click="volver()" title="Ir atrás"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></button></div>
+<div class="col-md-12 text-center color_orange margin_10">AGREAGAR NOTA</div>
+<form name="notaForm">
+<div class="col-md-12 margin_10 form-group guardar_nota">
+	<div class="col-md-2 col-xs-4"><label for="nota_numero">ESTADO: </label></div>
+	<div class="col-md-2 col-xs-4"><label class="bandera">{{checkboxModelBaja.valor}}</label></div>
+	<div class="col-md-2 col-xs-4 text-left margin_10_bottom"> <input type="checkbox" ng-model="checkboxModelBaja.valor"
+           ng-true-value="'CANCELADO'" ng-false-value="'DEBE'" ng-click="n_dadoBaja()" class="caja_baja"></div>
+</div>
+<!--<div class="col-md-12 col-xs-12 border_1_super margin_top_bottom_10"></div>-->
+<div class="col-md-6 margin_10 form-group guardar_nota">
+	<div class="col-md-6"><label for="nota_numero">NOTA DE ENTREGA: </label></div><div class="col-md-6"><input type="text" class="form-control n_numero" name="nota_numero" ng-model='nota_numero' disabled="disabled"></div>
+</div>
+<div class="col-md-6 margin_10 form-group guardar_nota">
+	<div class="col-md-6"><label for="nota_fechaCreacion">FECHA DE CREACIÓN: </label></div><div class="col-md-6"><input type="text" name="nota_fechaCreacion" class="form-control n_fechaCreacion" data-ng-model='formDataNota.nota_fechaCreacion'></div>
+</div>
+<!--<div class="col-md-6 margin_10 form-group guardar_nota">
+	<div class="col-md-6"><label for="nota_deposito">DEPOSITO:</label></div><div class="col-md-6"><input type="text" name="nota_deposito" class="form-control n_deposito" ng-model='nota_deposito'></div>
+</div>
+
+<div class="col-md-6 margin_10 form-group guardar_nota">
+	<div class="col-md-6"><label for="nota_cambio">T. C. : </label></div><div class="col-md-6"><input type="text" name="nota_cambio" class="form-control nota_cam" placeholder="" ng-model='nota_cambio'></div>
+</div>-->
+<div class="col-md-6 margin_10 form-group guardar_nota">
+	<div class="col-md-6"><label for="nota_pago">FORMA DE PAGO: </label></div><div class="col-md-6"><select id="focus-ini" class="form-control n_pago" ng-options="option.nombre for option in dataF track by option.valor" ng-model="selectedFormaPago" ng-change="hasChangedFormaPago
+()"></select></div>
+</div>
+<div class="col-md-6 margin_10 form-group guardar_nota">
+	<div class="col-md-6"><label for="nota_vendedor">VENDEDOR: </label></div><div class="col-md-6">
+		<select name="nota_vendedor" id="id_nota_vendedor"
+      	ng-options="option.nombre for option in datav.availableOptionsVendedor track by option.id_empleado"
+      	class="n_vendedor form-control" ng-model="selectedVendedor" ng-change="hasChangedVendedor
+()">
+      	</select>
+	</div>		
+</div>
+<div class="col-md-6 margin_10 form-group guardar_nota">
+	<div class="col-md-6"><label for="nota_cliente">CLIENTE: </label></div>
+	<div class="col-md-6">
+		<select name="nota_cliente" id="id_nota_cliente"
+      	ng-options="option.nombre for option in datac.availableOptionsCliente track by option.id_cliente"
+      	class="n_cliente form-control" ng-model="selectedCliente" ng-change="hasChangedCliente
+()">
+      	</select>
+      	<div class="col-xs-9 padding_0">
+      	<input type="text" name="crea_cliente" class="crea_cliente agregar_cliente_nuevo form-control width_auto agregar_positivo">
+      	</div>
+      	<div class="col-xs-3 padding_0">
+      	<button class="btn crea_cliente btn_agregar_positivo width_auto" ng-click="agregar_nuevoCliente()" title="Agregar Nuevo Cliente"><span class="glyphicon glyphicon-plus"></span></button>
+      	</div>
+      	<input type="checkbox" ng-model="checkboxModelCliente.value"
+           ng-true-value="'si'" ng-false-value="'no'" ng-click="editarCliente()" class="caja crea_cliente_box">Agregar nuevo Cliente
+	</div>		
+</div>
+<!--<div class="col-md-6 margin_10 form-group guardar_nota">
+	<div class="col-md-6"><label for="nota_vendedor">AUTORIZADO: </label></div><div class="col-md-6">
+		<select name="nota_autorizado" id="id_nota_usuario"
+      	ng-options="option.nombre for option in datau.availableOptionsUsuario track by option.id_usuario"
+      	class="n_usuario form-control" ng-model="selectedUsuario" ng-change="hasChangedUsuario
+()">
+      	</select>
+	</div>		
+</div>-->
+<div class="col-md-12 margin_10 text-center margin_10 form-group">
+	<button class="btn btn_super btn_desaparece" ng-click="guardar_nota()">AGREGAR PEDIDO</button>
+</div>
+
+<div class="col-md-12 border_1_baja margin_top_bottom_10 padding_top_10 pedido_nota_css">
+<form name="notaPedidoForm">
+	<div class="col-md-4 form-group">
+		<label for=notaPedido_productoS>Producto</label>
+		<select name="notaPedido_productoS" id="id_notaPedido_productoS"
+      	ng-options="option.nombre for option in datap.availableOptionsProducto track by option.id_producto"
+      	ng-model="selectedPrecio" class="np_productoS form-control" ng-change="hasChanged()">
+    	</select>
+    </div>
+	<div class="col-md-1 form-group">
+	<label for=notaPedido_masa>U/M</label><br><input type="text" class="form-control notaPedido_ma" name="notaPedido_masa" ng-model='notaPedido_masa'>
+	</div>
+
+	
+	<div class="col-md-2 form-group">
+	<label for=notaPedido_cantidad>Pedido</label><br><input type="text" class="form-control notaPedido_caNo" name="notaPedido_cantidadNo" ng-model='notaPedido_cantidadNo' ng-keyup="escribePrecioNo()"><input type="text" class="form-control notaPedido_caSi" name="notaPedido_cantidadSi" ng-model='notaPedido_cantidadSi' placeholder="0" ng-keyup="escribePrecioSi()">
+	</div>
+
+	<div class="col-md-2 form-group">
+	<label for=notaPedido_precio>Precio unidad Bs.</label><br><input type="text" class="form-control notaPedido_pr" name="notaPedido_precio" ng-model='notaPedido_precioEdit' placeholder="Escriba Precio" ng-keyup="escribePrecioSi()">
+	<select name="notaPedido_precioS" id="id_notaPedido_precioS"
+      	ng-options="option.value for option in listPrecio track by option.id"
+      	ng-model="selectedPrecioSelect" class="np_precioS form-control" ng-change="hasChangedPrecioSelect()">
+    </select>
+    <input type="checkbox" ng-model="checkboxModel.value2"
+           ng-true-value="'si'" ng-false-value="'no'" ng-click="editarPrecio()" class="caja_base">Precio Sistema
+	</div>
+	<!--<div class="col-md-2 form-group">
+	<label for=notaPedido_entregado>Entregado</label><br><input type="text" class="form-control notaPedido_en" name="notaPedido_entregado" ng-model='notaPedido_entregado' disabled="disabled">
+	</div>-->
+	
+	<div class="col-md-1 margin_10 text-right form-group">
+		<button class="btn btn_afirmativo" ng-click="agregarPedidoNota()" title="Pedido en lista"><span class="glyphicon glyphicon-saved"></span></button>
+	</div>
+	<div class="col-md-2 form-group">
+		<label for=notaPedido_subtotal>Subtotal</label><br>
+		<input type="text" class="form-control notaPedido_su" name="notaPedido_subtotal" ng-model='notaPedido_resultado' disabled="disabled">
+		<input type="text" class="form-control notaPedido_suEdit" name="notaPedido_subtotal" ng-model='notaPedido_resultadoEdit' ng-init="notaPedido_resultadoEdit = 0" disabled="disabled">Bs.
+	</div>
+	<div class="col-md-12"></div>
+	<div class="col-md-4 form-group">
+		<label for=notaPedido_Total>Total</label><br>
+		<input type="text" class="total_css form-control notaPedido_to border_1" name="notaPedido_total" ng-model='notaPedido_total' disabled="disabled">Bs.
+	</div>
+</div>	
+<div class="col-md-12 border_1_baja margin_top_bottom_10 padding_top_10 pedido_nota_css_2">
+<div class="col-md-12 table-responsive">
+	<table class="table">
+		<thead>
+			<tr>
+				<th class="tamano_pedido text-center">Código</th>
+				<th class="tamano_pedido text-center">Descripción</th>
+				<th class="tamano_pedido text-center">U/M</th>
+				<th class="tamano_pedido text-center">Pedido</th>
+				<th class="tamano_pedido text-center">Entregado</th>
+				<th class="tamano_pedido text-center">P/U</th>
+				<th class="tamano_pedido text-right">Subtotal</th>
+				<th class="tamano_pedido text-center">Eliminar</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in datoNotaPedidos">
+				<td class="text-center">{{item.id_producto}}</td>
+				<td class="text-center">{{item.nombre}}</td>
+				<td class="text-center">{{item.masa}}</td>
+				<td class="text-center">{{item.cantidad}}</td>
+				<td class="text-center">{{item.entregado}}</td>
+				<td class="text-center">{{item.precio}}</td>
+				<td class="text-right">{{item.subtotal}}</td>
+				<td ng-click="pedido_eliminar(item.codigo)" class="text-center"><a href=""><span class="glyphicon glyphicon-remove elimina_css" aria-hidden="true"></span></a></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div class="col-md-6 form-group text-center">
+	<button class="btn btn_super" ng-click="imprimirNota()">IMPRIMIR NOTA</button>
+</div>
+<div class="col-md-6 text-center form-group">
+	<button class="btn btn_super boton_cambio" ng-click="modificar_nota()">GUARDAR NOTA</button>
+</div>	
+</div>
+</form>
+
+</form>
+

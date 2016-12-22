@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html moznomarginboxes mozdisallowselectionprint  ng-app="print_note" >
+<head>
+	<title>imprime test</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen" href="css/style.css">
+    <link rel="stylesheet" media="screen" href="css/style.custom.css">
+    <link rel="stylesheet" media="screen" href="css/program.style.css">
+    
+  	<script src="js/angularjs.min.js"></script>
+  	<script src="js/angular-route.js"></script>
+  	<script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/controller.imprimir.nota.js"></script>
+    <script src="js/NumeroALetras.js"></script>
+    <script src="js/redondeo.decimal.js "></script>
+    <script src="bootstrap3/js/bootstrap.min.js"></script>
+  	<style type="text/css">
+  		body{
+  			font-size: 12px;
+  			font-family: "Times New Roman", Times, serif;
+  			letter-spacing: 2px;
+  		}
+      .letter_rellenar{
+        font-size: 12px !important;
+      }
+      .letter_big{
+        font-size: 16px;
+      }
+      .small-letter{
+        font-size: 8px;
+      }
+      .logo_td{
+        width: 100px;
+      }
+  		.font_size_little{
+  			font-size: 12px;
+  		}
+  		.with_input_detalle{
+  			width: 100px;
+  		}
+  		.margin_separado{
+  			background: #E3E3E3;
+  			margin-top: 10px;
+  		}
+  		.table_custom{
+  			width: 90%;		
+  		}
+  		.titulo_custom{
+  			text-align: center;
+  		}
+  		.imagen_logo{
+  			width: 100px;
+  			height: 50px;
+  		}
+  		.negrita{
+  			font-weight: bold;
+  		}
+  		.align_right{
+  			text-align: right;
+  		}
+  		.align_left{
+  			text-align: left;
+  		}
+  		.align_center{
+  			text-align: center;
+  		}
+  		.border_1{
+  			border: 1px solid black;
+  		}
+  		.border_1_user{
+  			border: 1px solid black;
+  		}
+  		.padding_x{
+  			padding-left: 5px;
+  			padding-right: 5px;
+  		}
+  		.padding_y{
+  			padding-bottom: 5px;
+  			padding-top: 0px;
+  		}
+  		.margin_bottom_top{
+  			margin-bottom: 5px;
+  			margin-top: 5px;
+  		}
+  		.{
+  			border-bottom: 1px dotted black;
+  		}
+  		.border_bottom_top{
+  			border-top: 1px solid black;
+  			border-bottom: 1px solid black;
+  		}
+  		.border_bottom_top_user{
+  			border-top: 1px solid black;
+  			border-bottom: 1px solid black;
+  		}
+  		.hidden_letter{
+  			color: white;
+  		}
+  		.border_left_solid{
+  			border-left: 1px solid black;
+  		}
+  		.border_right_solid{
+  			border-right: 1px solid black;
+  		}
+  		.border_bottom_solid{
+  			border-bottom: 1px solid black;
+  		}
+  		.border_top_solid{
+  			border-top: 1px solid black;
+  		}
+  		.border_left_solid_user{
+  			border-left: 1px solid black;
+  		}
+  		.border_right_solid_user{
+  			border-right: 1px solid black;
+  		}
+  		.border_bottom_solid_user{
+  			border-bottom: 1px solid black;
+  		}
+  		.border_top_solid_user{
+  			border-top: 1px solid black;
+  		}
+      .hidden{
+        display: none;
+      }
+  		table{
+  			border-collapse: collapse;
+  		}
+  		.ancho_borde_segmentado_punto{
+  			float: right;
+    		width: 70%;
+    		height: 10px;
+  		}
+  		.width_all{
+  			width: 100%;
+  		}
+      #nota_imprimir{
+      width: 210mm !important;
+      height: 140mm !important;
+      /*border:1px solid red;*/
+      padding-top: 40px;
+    }
+  	</style>
+  	<style type="text/css" media="print">
+    @page 
+    { 
+        size: auto;   /* auto is the initial value */
+        margin: 0mm;  /* this affects the margin in the printer settings */
+    }
+    #nota_imprimir{
+      width: 210mm !important;
+      height: 60mm !important;
+      padding-top: 10px;
+      margin-top: 20px;
+    }
+    .boton_imprime{
+    	display: none;
+    }
+    .no_mostrar{
+    	display: none;
+    }
+    .hidden{
+        display: none;
+      }
+</style>
+</head>
+<body ng-controller="Ctrl">
+<h1 class="no_mostrar col-md-6 text-center color_orange">VISTA PREVIA</h1> 
+<!--<div class="col-md-12 no_mostrar"></div>
+<div class="no_mostrar col-md-6 col-xs-12 text-center margin_top_bottom_10">
+  <div class="col-xs-6 col-md-6 text-center margin_top_bottom_10"><a class="boton_imprime btn btn_afirmativo" href="javascript:window.print()"> IMPRIMIR</a></div>
+  <div class="col-xs-6 col-md-6 text-center margin_top_bottom_10"><a class="boton_imprime btn btn_afirmativo" href="" ng-click = "volver()">ATRÁS</a></div>
+</div>
+
+</div>-->
+
+<div id="nota_imprimir" align="center" class="" >
+<table class="table_custom border_1">
+   <tr>
+      <td rowspan="4" class="padding_y logo_td"><img class="imagen_logo" src="img/logo.jpg"></td>
+      <td colspan="4" class="paddin_y titulo_custom align_center negrita letter_big">EMBUTIDOS MANWIL S.R.L.</td> 
+   </tr>
+   <tr>
+      <td colspan="2" class="align_left padding_x"><b>FECHA: </b>{{nota_fecha}}</td>
+      <td colspan="2" class="align_right padding_x"><b>NS({{nota_id}}) - Pag. :</b> {{nota_numeroNota}} de {{nota_numeroNotaTotal}}</td>
+   </tr>
+
+   <tr>
+      <td colspan="2" class="align_left padding_x"><b>CLIENTE: </b> {{nota_cliente}}</td>
+      <td colspan="2" class="align_right padding_x"><b>FORMA DE PAGO: </b> {{nota_formaPago}}</td>
+   </tr>
+
+   <tr>
+      <td colspan="2" class="align_left padding_x">{{nota_empresa}}</td>
+      <td colspan="2" class="negrita letter_big align_right padding_x">NOTA DE ENTREGA: {{nota_id}}</td>
+   </tr>
+</table>
+<table class="table_custom margin_bottom_top font_size_little">
+<thead>
+  <tr class="border_1">
+    <th class="align_center border_bottom_top padding_x">Código</th>
+    <th class="align_center border_bottom_top padding_x">Descripción</th>
+    <th class="align_center border_bottom_top padding_x">U/M</th>
+    <th class="align_center border_bottom_top padding_x">Pedido</th>
+    <th class="align_center border_bottom_top padding_x">Entregado</th>
+    <th class="align_center border_bottom_top padding_x">P/U</th>
+    <th class="align_right border_bottom_top padding_x">Subtotal Bs.</th>
+  </tr>
+</thead>
+<tbody>
+  <tr ng-repeat="item in formNotaPedido">
+    <td class="align_center ">{{item.id_producto}}</td>
+    <td class="align_center ">{{item.nombre}}</td>
+    <td class="align_center ">{{item.masa}}</td>
+    <td class="align_center ">{{item.cantidad}}</td>
+    <td class="align_center ">{{item.entregado}}</td>
+    <td class="align_right ">{{item.precio | number : 2}}</td>
+    <td class="align_right ">{{item.subtotal | number : 2}}</span></td>
+  </tr>
+</tbody>
+</table>
+
+<table class="table_custom">
+  <tr>
+    <td class="padding_x padding_y border_top_solid border_left_solid"><b>ITEMS TOTAL: </b>{{items}}</td>
+    <td colspan="2" class="padding_x padding_y border_top_solid"><b>CANTIDAD TOTAL: </b>{{cantidad}} {{masa}}</span><span class="n_cantidad_u"></td>
+    <td colspan="2" class="padding_x align_right border_right_solid border_top_solid"><b>TOTAL Bs.: </b>{{nota_total | number : 2}}</td>
+  </tr>
+  <tr>
+    <td colspan="4" class="padding_x padding_y align_right border_right_solid border_left_solid border_bottom_solid negrita">SON: <span class="n_son"></span> </td>
+  </tr>
+  <tr>
+      <td colspan="2" class="align_left padding_y padding_x border_left_solid">SEGUN FACTURA</td>
+      <td colspan="2" class="align_right padding_y padding_x border_right_solid"><b>VENCIMIENTO: </b>{{fecha_vencimiento}}</td></b>
+      
+      </td>
+   </tr>
+  <tr>
+    <td class="padding_x padding_y negrita border_right_solid border_left_solid border_top_solid">Elaborado:</td>
+    <td class="padding_x padding_y negrita border_right_solid border_left_solid border_top_solid">Autorizado:</td>
+    <td class="padding_x padding_y negrita border_right_solid border_left_solid border_top_solid">Vendedor:</td>
+    <td class="padding_x padding_y negrita border_right_solid border_left_solid border_top_solid">Firma: <div class="ancho_borde_segmentado_punto "></div></td>
+  </tr>
+  <tr>
+    <td class="padding_x align_center border_right_solid border_left_solid border_bottom_solid">{{nota_elaborado}}</td>
+    <td class="padding_x align_center border_right_solid border_left_solid border_bottom_solid">{{nota_usuario}}</td>
+    <td class="padding_x padding_y align_center border_right_solid border_left_solid border_bottom_solid">{{nota_vendedor}}</td>
+    <td class="padding_x padding_y negrita border_right_solid border_left_solid border_bottom_solid">Nombre: <div class="ancho_borde_segmentado_punto "></div></td>
+  </tr>
+  <tr>
+  
+    <td colspan="2"><div class="small-letter align_left"><script>
+    var meses = new Array ("ENERO","FEBRERO","MARZO","ABRIL","MAYO","JUNIO","JULIO","AGOSTO","SEPTIEMBRE","OCTUBRE","NOVIEMBRE","DICIEMBRE");
+    var f=new Date();
+    document.write(f.getDate() + "/" + (f.getMonth()+1) + "/" + f.getFullYear());
+  </script>-<script>
+    var i = new Date();
+    document.write(i.getHours() + ":" + i.getMinutes() + ":" + i.getSeconds());
+  </script></div></td>
+    <td colspan="2" class="align_right padding_y"><b>NOTA: </b>La presente nota no tiene validez fiscal.</td>
+  </tr>
+  <tr>
+    <td colspan="4" class="align_center border_top_solid padding_y">Villa Dolores C. 5 No. 118 - El Alto - Tel/Fax. +591 - 2 - 2824950 - manwil.ticona.srl@gmail.com </td>
+  </tr> 
+</table> 
+</div>
+</body>
+</html>

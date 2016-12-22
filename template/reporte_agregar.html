@@ -1,0 +1,45 @@
+<div >
+<div class="col-md-12 text-right"><button id="boton_atras" class="btn btn_afirmativo" ng-click="volver()" title="Ir atrás"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></button></div>
+<div class="col-md-12 text-center color_orange margin_10">REPORTE NOTA</div>
+<div class="col-md-12">
+		<div class="col-md-12 margin_10">
+			<div class="col-md-3">FECHA DESDE:</div>
+			<div class="col-md-3"> 
+				<div class='' ng-click="fecha_desde()">
+  					<!--<p>{{datePicker || "00/00/0000"}}</p>-->
+  					<input class="f_d form-control date_desde" type="text" ng-model="ng_date_desde" placeholder="Presione" />
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12 margin_10">
+			<div class="col-md-3">FECHA HASTA:</div>
+			<div class="col-md-3">  
+				<div class='' ng-click="fecha_hasta()">
+  					<!--<p>{{datePicker || "00/00/0000"}}</p>-->
+  					<input class="f_h form-control date_hasta" type="text" ng-model="ng_date_hasta" placeholder="Presione" />
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12 margin_10">
+			<div class="col-md-3">VENDEDOR:</div>
+			<div class="col-md-3">
+				<select name="nota_vendedor" id="id_nota_vendedor"
+      			ng-options="option.nombre for option in datav.availableOptionsVendedor track by option.id_empleado"
+      			class="n_vendedor form-control" ng-model="selectedVendedor" ng-change="hasChangedVendedor()">
+      		</select>
+      		</div>
+		</div>
+		<div class="col-md-12 margin_10">
+			<div class="col-md-6 text-center margin_10"><button  class="btn btn_afirmativo" title="Crear reporte" ng_click="crear_reporte()">
+			<!--<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>-->CREAR</button></div>
+		</div>
+		<!--<div class="col-md-12 oculta_reporte_vendedor">
+			<div class="col-md-10">Filtrar por Vendedor.</div>
+			<div class="col-md-1 height-10">
+				<input type="checkbox" ng-model="checkboxModelVendedorReporte.valor"
+           		ng-true-value="'si'" ng-false-value="'no'" ng-click="n_reporte_vendedor()" class="caja_baja">
+           	</div>
+		</div>-->
+</div>
+	
+</div>

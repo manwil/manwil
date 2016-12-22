@@ -1,0 +1,107 @@
+<div >
+<button id="boton_atras" class="btn btn_afirmativo nivel_1" ng-click="volver()" title="Ir atrás"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></button>
+<button id="boton_print" class="btn btn_super nivel_2" ng-click="imprimir_reporte()" title="Imprimir Debe"><span class="glyphicon glyphicon-print" aria-hidden="true"></span></button>
+<div class="col-md-12 text-center color_orange margin_10">REPORTE NOTA</div>
+<div class="col-md-12">
+		<div class="col-md-4 margin_10">
+			<div class="col-md-6">FECHA DESDE:</div>
+			<div class="col-md-6"> 
+				{{reporte_fecha_desde}}
+			</div>
+		</div>
+		<div class="col-md-4 margin_10">
+			<div class="col-md-6">FECHA HASTA:</div>
+			<div class="col-md-6">  
+				{{reporte_fecha_hasta}}
+			</div>
+		</div>
+		<div class="col-md-4 margin_10">
+			<div class="col-md-6">VENDEDOR:</div>
+			<div class="col-md-6">
+				{{reporte_nombre_vendedor}}
+      		</div>
+		</div>
+</div>
+	
+<div class="col-md-12 border_1"></div>
+
+<div class="col-md-6 col-xs-12">
+	<div class="col-md-12">
+		<label class="ficha_debe margin_10 col-md-12">DEBE TOTAL Bs. {{total_totalesd}}</label>
+	</div>
+	<div class="col-md-12">
+	<div class="col-md-12 table-responsive text-center altura-tabla">
+		<table class="table">
+			<tr>
+				<th class="small_cell border_1_force text-center color_orange">Nº Fila</th>
+				<th class="small_cell border_1_force text-center color_orange">NOTA SISTEMA</th>
+				<th class="small_cell border_1_force text-center color_orange">NOTA PAPEL</th>
+				<th class="small_cell border_1_force text-center color_orange">ESTADO</th>
+				<th class="size_cell border_1_force text-center color_orange">ESTADO</th>
+				<th class="size_cell border_1_force text-center color_orange">CLIENTE</th>
+				<th class="size_cell border_1_force text-center color_orange">AUTORIZADO</th>
+				<th class="size_cell border_1_force text-center color_orange">FECHA DE CREACIÓN</th>
+				<th class="size_cell border_1_force text-center color_orange">TOTAL POR NOTA Bs.</th>
+				<th class="size_big border_1_force text-center color_white">MODIFICAR_____ <b class="color_orange">Modificar total Bs.</b></th>
+			</tr>
+			<tr ng-repeat="item in todo_debe" class="hover_red">
+				<td class="color_orange small_cell">{{item.id}}</td>
+				<td class="small_cell">{{item.id_nota}}</td>
+				<td class="small_cell cell_top_border color_blue">{{item.id_nota_papel}}</td>
+				<td class="small_cell"><a href="" ng-click = "nota_debe(item.id_nota)"><span class="glyphicon glyphicon-ok-circle font-size-18 color_red"></span></a></td>
+				<td class="size_cell">{{item.baja}}</td>
+				<td class="size_cell">{{item.cliente}}</td>
+				<td class="size_cell">{{item.autorizado}}</td>
+				<td class="size_cell">{{item.fecha_creacion}}</td>
+				<td class="size_cell">{{item.monto}}</td>
+				<td class="size_big">
+					<div class="input-group">
+						<input id="nt_{{item.id_nota}}" class="form-control n_guardar_to " type="text" name="n_guardar_t" ng-model='n_guardar_t'><span  class="input-group-addon fusion_btn_afirmativo" ng-click="guardar_total_modificado(item.id_nota)"><span class="glyphicon glyphicon-ok"></span></span>
+     				</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</div>
+</div>
+
+<div class="col-md-6 col-xs-12">
+	<div class="col-md-12"><label class="ficha_cancelado margin_10 col-md-12">CANCELADO TOTAL Bs. {{total_totalesc}}</label></div>
+	<div class="col-md-12">
+	<div class="col-md-12 table-responsive text-center altura-tabla">
+		<table class="table">
+			<tr>
+				<th class="small_cell border_1_force text-center color_orange">Nº Fila</th>
+				<th class="small_cell border_1_force text-center color_orange">NOTA SISTEMA</th>
+				<th class="small_cell border_1_force text-center color_orange">NOTA PAPEL</th>
+				<th class="small_cell border_1_force text-center color_orange">ESTADO</th>
+				<th class="size_cell border_1_force text-center color_orange">ESTADO</th>
+				<th class="size_cell border_1_force text-center color_orange">CLIENTE</th>
+				<th class="size_cell border_1_force text-center color_orange">AUTORIZADO BAJA</th>
+				<th class="size_cell border_1_force text-center color_orange">FECHA DE CREACIÓN</th>
+				<th class="size_cell border_1_force text-center color_orange">FECHA DE BAJA</th>
+				<th class="size_cell border_1_force text-center color_orange">TOTAL POR NOTA</th>
+			</tr>
+			<tr ng-repeat="item in todo_canceldo" class="hover_green">
+				<td class="color_orange small_cell cell_top_border">{{item.id}}</td>
+				<td class="small_cell cell_top_border">{{item.id_nota}}</td>
+				<td class="small_cell cell_top_border color_blue">{{item.id_nota_papel}}</td>
+				<td class="small_cell cell_top_border"><a href="" ng-click = "nota_cancelado(item.id_nota)"><span class="glyphicon glyphicon-remove-circle font-size-18 color_green"></span></a></td>
+           		<td class="size_cell cell_top_border">{{item.baja}}</td>
+				<td class="size_cell cell_top_border">{{item.cliente}}</td>
+				<td class="size_cell">{{item.autorizado}}</td>
+				<td class="size_cell cell_top_border">{{item.fecha_creacion}}</td>
+				<td class="size_cell cell_top_border">{{item.fecha_baja}}</td>
+				<td class="size_cell cell_top_border">{{item.monto}}</td>
+			</tr>
+		</table>
+
+	</div>
+	</div>	
+</div>
+<div class="col-md-12 margin_10 border_1"></div>
+
+<!--<div class="col-md-12">
+	<div class="col-md-12 text-center margin_10"><button  class="btn btn_afirmativo" title="Imprimir reporte" ng_click="imprimir_reporte()">IMPRIMIR</button></div>
+</div>-->
+</div>

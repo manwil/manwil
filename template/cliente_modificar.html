@@ -1,0 +1,53 @@
+<div class="col-md-12 text-right"><button id="boton_atras" class="btn btn_afirmativo" ng-click="volver()" title="Ir atrás"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></button></div>
+<div class="col-md-12 text-center color_orange margin_10">MODIFICAR CLIENTE</div>
+<form >
+<div class="col-md-12 margin_10">
+	<div class="col-md-3">Código</div>
+	<div class="col-md-3"><input type="text" class="codigo_pro form-control" name="cliente_codigo" ng-model="cliente_codigo"  disabled="true"></div>
+</div>
+<div class="col-md-12 margin_10">
+	<div class="col-md-3">Nombre</div>
+	<div class="col-md-3"><input class="nombre_pro ng-pristine ng-untouched ng-valid ng-empty form-control" name="cliente_nombre" ng-model="cliente_nombre" type="text"></div>
+</div>
+<div class="col-md-12 margin_10">
+	<div class="col-md-3">Apellido</div>
+	<div class="col-md-3"><input class="apellido_pro ng-pristine ng-untouched ng-valid ng-empty form-control" name="cliente_apellido" ng-model="cliente_apellido" type="text"></div>
+</div>
+<div class="col-md-12 margin_10">
+	<div class="col-md-3">Nombre Empresa</div>
+	<div class="col-md-3"><input class="nombreE_pro ng-pristine ng-untouched ng-valid ng-empty form-control" name="cliente_nombreE" ng-model="cliente_nombreE" type="text"></div>
+</div>
+<div class="col-md-12 margin_10">
+	<div class="col-md-3">Raźon Social</div>
+	<div class="col-md-3"><input type="text" class="form-control c_razonSocial" name="cliente_razonSocial" ng-model="cliente_razonSocial"></div>
+</div>
+<div class="col-md-12 margin_10">
+	<div class="col-md-3">Nit</div>
+	<div class="col-md-3"><input class="nit_pro ng-pristine ng-untouched ng-valid ng-empty form-control" name="cliente_nit" ng-model="cliente_nit" type="text"></div>
+</div>
+<div class="col-md-12 margin_10">
+	<div class="col-md-3">Direccion</div>
+	<div class="col-md-3"><input class="direccion_pro ng-pristine ng-untouched ng-valid ng-empty form-control" name="cliente_direccion" ng-model="cliente_direccion" type="text"></div>
+</div>
+<div class="col-md-12 margin_10">
+	<div class="col-md-3">Telefono</div>
+	<div class="col-md-3"><input class="celular_pro ng-pristine ng-untouched ng-valid ng-empty form-control" name="cliente_celular" ng-model="cliente_celular" type="text"></div>
+</div>
+<div class="col-md-12 margin_10">
+	<div class="col-md-3">Observación</div>
+	<div class="col-md-3"><input class="observacion_pro ng-pristine ng-untouched ng-valid ng-empty form-control" name="cliente_observacion" ng-model="cliente_observacion" type="text"></div>
+</div>
+<div class="col-md-12 margin_10">
+	<div class="col-md-3">Vendedor</div>
+	<div class="col-md-3">
+		<select name="vendedor" id="id_vendedor"
+      	ng-options="option.nombre for option in datacv.availableOptionsClienteVendedor track by option.id_empleado"
+      	class="c_vendedor form-control" ng-model="selectedClienteVendedor" ng-change="hasChangedClienteVendedor
+()">
+      	</select>
+	</div>
+</div>
+<div class="col-md-12 margin_10">
+	<div class="col-md-6 text-center"><a href="" class="btn btn_afirmativo" ng-click="cliente_modificar_btn()">Modificar</a></div>
+</div>
+</form>

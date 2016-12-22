@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html moznomarginboxes mozdisallowselectionprint  ng-app="print_reporte" >
+<head>
+	<title>imprime test</title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.min.css">
+    <link rel="stylesheet" media="screen" href="css/style.css">
+    <link rel="stylesheet" media="screen" href="css/style.custom.css">
+    <link rel="stylesheet" media="screen" href="css/program.style.css">
+    
+  	<script src="js/angularjs.min.js"></script>
+  	<script src="js/angular-route.js"></script>
+  	<script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/controller.imprimir.reporte.js"></script>
+    <script src="js/NumeroALetras.js"></script>
+    <script src="js/redondeo.decimal.js "></script>
+    <script src="bootstrap3/js/bootstrap.min.js"></script>
+  	<style type="text/css">
+  		body{
+  			font-size: 10px;
+  			font-family: "Times New Roman", Times, serif;
+  			letter-spacing: 2px;
+  		}
+      .letter_rellenar{
+        font-size: 10px !important;
+      }
+      .letter_big{
+        font-size: 14px;
+      }
+  		.font_size_little{
+  			font-size: 10px;
+  		}
+  		.with_input_detalle{
+  			width: 100px;
+  		}
+  		.margin_separado{
+  			/*background: #E3E3E3;*/
+  			margin-top: 10px;
+  		}
+  		.table_custom{
+  			width: 90%;		
+  		}
+  		.titulo_custom{
+  			text-align: center;
+  		}
+  		.imagen_logo{
+  			width: 50px;
+  			height: 25px;
+  		}
+  		.negrita{
+  			font-weight: bold;
+  		}
+  		.align_right{
+  			text-align: right;
+  		}
+  		.align_left{
+  			text-align: left;
+  		}
+  		.align_center{
+  			text-align: center;
+  		}
+  		.border_1{
+  			border: 1px solid black;
+  		}
+  		.border_1_user{
+  			border: 1px solid black;
+  		}
+  		.padding_x{
+  			padding-left: 5px;
+  			padding-right: 5px;
+  		}
+  		.padding_y{
+  			padding-bottom: 5px;
+  			padding-top: 0px;
+  		}
+  		.margin_bottom_top{
+  			margin-bottom: 5px;
+  			margin-top: 5px;
+  		}
+  		.border_bottom_top{
+  			border-top: 1px solid black;
+  			border-bottom: 1px solid black;
+  		}
+  		.border_bottom_top_user{
+  			border-top: 1px solid black;
+  			border-bottom: 1px solid black;
+  		}
+  		.hidden_letter{
+  			color: white;
+  		}
+  		.border_left_solid{
+  			border-left: 1px solid black;
+  		}
+  		.border_right_solid{
+  			border-right: 1px solid black;
+  		}
+  		.border_bottom_solid{
+  			border-bottom: 1px solid black;
+  		}
+  		.border_top_solid{
+  			border-top: 1px solid black;
+  		}
+  		.border_left_solid_user{
+  			border-left: 1px solid black;
+  		}
+  		.border_right_solid_user{
+  			border-right: 1px solid black;
+  		}
+  		.border_bottom_solid_user{
+  			border-bottom: 1px solid black;
+  		}
+  		.border_top_solid_user{
+  			border-top: 1px solid black;
+  		}
+      .hidden{
+        display: none;
+      }
+  		table{
+  			border-collapse: collapse;
+  		}
+  		.ancho_borde_segmentado_punto{
+  			float: right;
+    		width: 70%;
+    		height: 10px;
+  		}
+  		.width_all{
+  			width: 100%;
+  		}
+      .padding_top_10{
+        padding-top: 10px;
+      }
+      .padding_5{
+        padding: 5px;
+      }
+      #nota_imprimir{
+      width: 190mm !important;
+      height: 140mm !important;
+      /*border:1px solid red;*/
+      padding-top: 10px;
+      }
+      .encabezado_1{
+        width: 50px;
+      }
+      .encabezado_2{
+        width: 100px;
+      }
+  	</style>
+  	<style type="text/css" media="print">
+    @page 
+    { 
+        size: auto;   /* auto is the initial value */
+        margin: 0mm;  /* this affects the margin in the printer settings */
+    }
+    #nota_imprimir{
+      width: 210mm !important;
+      height: 60mm !important;
+      padding-top: 10px;
+    }
+    .boton_imprime{
+    	display: none;
+    }
+    .no_mostrar{
+    	display: none;
+    }
+    .hidden{
+        display: none;
+      }
+</style>
+</head>
+<body ng-controller="notaReporteCtrl">
+
+<div class="container">
+
+<!--<h1 class="no_mostrar col-md-6 text-center color_orange tamano_super">VISTA PREVIA</h1> 
+<div class="col-md-12 no_mostrar"></div>
+<div class="no_mostrar col-xs-12 col-md-6 text-center margin_top_bottom_10">
+  <div class="col-xs-6 text-center margin_top_bottom_10"><a class="boton_imprime btn btn_afirmativo" href="javascript:window.print()"> IMPRIMIR</a></div>
+  <div class="col-xs-6 text-center margin_top_bottom_10"><a class="boton_imprime btn btn_afirmativo" href="" ng-click = "volver()" >ATRÁS</a></div>
+</div>-->
+
+</div>
+
+<div id="nota_imprimir" align="center" class="" >
+<table class="table_custom">
+   <tr>
+      <th class="padding_y logo_td"></th>
+   </tr>
+   <tr>
+     <td  class="paddin_y titulo_custom align_center negrita letter_big">EMBUTIDOS MANWIL S.R.L.</td> 
+   </tr>
+</table>
+<table>
+   <tr>
+      <td colspan="2" class="align_center padding_top_10">REPORTE DE NOTAS</td>
+   </tr>
+   <tr>
+      <td class="align_left padding_x"><b>Fecha desde: </b>{{fecha_desde}}</td>
+      <td class="align_left padding_x"><b>Fecha hasta: </b>{{fecha_hasta}}</td>
+   </tr>
+   <tr>
+     <td><b>Vendedor: </b>{{nombre_vendedor}}</td>
+   </tr>
+</table>
+<label class="margin_top_bottom_10">DEBE</label>
+    <table class="table_custom border_1">
+      <tr>
+        <th class="align_center border_bottom_top padding_x">Nº</th>
+        <th class="align_center border_bottom_top padding_x">NOTA</th>
+        <th class="align_center border_bottom_top padding_x">CLIENTE</th>
+        <th class="align_center border_bottom_top padding_x">AUTORIZADO</th>
+        <th class="align_center border_bottom_top padding_x">FECHA DE CREACIÓN</th>
+        <th class="align_center border_bottom_top padding_x">TOTAL POR NOTA</th>
+        <th class="align_center border_bottom_top padding_x">ESTADO</th>
+      </tr>
+      <tr ng-repeat="item in todo_debe">
+        <td class="align_center padding_5">{{item.id}}</td>
+        <td class="align_center padding_5">{{item.id_nota}}</td>
+        <td class="align_center padding_5">{{item.cliente}}</td>
+        <td class="align_center padding_5">{{item.autorizado}}</td>
+        <td class="align_center padding_5">{{item.fecha_creacion}}</td>
+        <td class="align_center padding_5">{{item.monto}}</td>
+        <td class="align_center padding_5">{{item.baja}}</td>
+      </tr>
+      <tr>
+        <td colspan="7" class="border_1 padding_5">TOTAL DEBE Bs. {{total_totalesd}}</td>
+      </tr>
+    </table>
+<table class="margin_separado">
+  <tr>
+    <td colspan="4" class="align_center border_top_solid padding_y">Villa Dolores C. 5 No. 118 - El Alto - Tel/Fax. +591 - 2 - 2824950 - manwilbolivia@hotmail.com </td>
+  </tr> 
+</table> 
+</div>
+</body>
+</html>

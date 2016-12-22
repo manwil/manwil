@@ -1,0 +1,39 @@
+<div class="col-md-12 text-right"><button id="boton_atras" class="btn btn_afirmativo" ng-click="volver()" title="Ir atrás"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></button></div>
+<div class="col-md-12 text-center color_orange margin_10">AGREAGAR PRODUCTO</div>
+<form >
+<div class="col-md-12 margin_10">
+	<div class="col-md-3">Código</div>
+	<div class="col-md-3"><input type="text" name="producto_codigo" ng-model="producto_codigo"></div>
+</div>
+<div class="col-md-12 margin_10">
+	<div class="col-md-3">Nombre</div>
+	<div class="col-md-3"><input type="text" name="producto_nombre" ng-model="producto_nombre"></div>
+</div>
+<div class="col-md-12 margin_10">
+	<div class="col-md-3">Precio con factura</div>
+	<div class="col-md-3"><input type="text" name="producto_preciofabrica" placeholder="0.00 Bs." ng-model="producto_precioFabrica"></div>
+</div>
+<div class="col-md-12 margin_10">
+	<div class="col-md-3">Precio sin factura</div>
+	<div class="col-md-3"><input type="text" name="precio_sinFactura" ng-model="precio_sinFactura"></div>
+</div>
+<div class="col-md-12 margin_10">
+	<div class="col-md-3">Precio preventista</div>
+	<div class="col-md-3"><input type="text" name="precio_preventista" ng-model="precio_preventista"></div>
+</div>
+<div class="col-md-12 margin_10">
+	<div class="col-md-3">Precio MEGAS</div>
+	<div class="col-md-3"><input type="text" name="precio_me" ng-model="precio_megas"></div>
+</div>
+
+
+
+
+<div class="col-md-12 margin_10">
+	<div class="col-md-3">Observación</div>
+	<div class="col-md-3"><input type="text" name="producto_observacion" ng-model="producto_observacion"></div>
+</div>
+<div class="col-md-12 margin_10">
+	<div class="col-md-6 text-center"><a href="" class="btn btn_afirmativo" ng-click="producto_guardar()">Agregar</a></div>
+</div>
+</form>

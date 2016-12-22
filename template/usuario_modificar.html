@@ -1,0 +1,69 @@
+<div class="col-md-12 text-right"><button id="boton_atras" class="btn btn_afirmativo" ng-click="volver()" title="Ir atrás"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></button></div>
+<div class="col-md-12 text-center color_orange margin_10">MODIFICAR USUARIO</div>
+
+<form  name="usuarioForm">
+
+<div class="form-group col-md-12 margin_10">
+	<div class="col-md-2"><label>Rol</label></div>
+	<div class="col-md-1 text-center">Administrador</div>
+   	<input class="col-md-1 text-center admin" name="rol" type="radio" data-ng-model='formData.usuario_rol' value="administrador" style="
+    height: 20px;">
+  	
+   	<div class="col-md-1 text-center">Otros</div>
+    <input class="col-md-1 text-center otros" name="rol" type="radio" data-ng-model='formData.usuario_rol' value="otros" style="
+    height: 20px;">
+  	
+</div>
+
+<div class="form-group col-md-12 margin_10">
+	<div class="col-md-3"><label for="empleado_nombre">Usuario</label></div>
+	<div class="col-md-3">
+		<input class="form-control id_usuario_u" type="text" name="id_usuario" data-ng-model='formData.id_usuario'  disabled>
+	</div>
+</div>
+<div class="form-group col-md-12 margin_10">
+	<div class="col-md-3"><label for="empleado_nombre">Nombre</label></div>
+	<div class="col-md-3">
+		<input class="nombre_usuario form-control" type="text" name="nombre" disabled>
+	</div>
+</div>
+<div class="form-group col-md-12 margin_10">
+	<div class="col-md-3"><label for="usuario_password">Contraseña</label></div>
+	<div class="col-md-3">
+	<div class="input-group">
+	<input id="pass" class="form-control usuario_co" type="password" name="usuario_psw" data-ng-model='formData.usuario_psw' data-ng-class='{ error: usuarioForm.usuario_psw.$invalid && !usuarioForm.$pristine }'>
+	<span  class="input-group-addon color_orange background_white">
+     <a href="" ng-click="mostrar_password()"><span class="glyphicon glyphicon-eye-open"></span></a> </span>
+     </div>
+	<!--<span class="red" data-ng-show="!usuarioForm.$pristine && usuarioForm.usuario_psw.$error.required">Contraseña es requiredo.</span>-->
+	</div>
+</div>
+<div class="form-group col-md-12 margin_10">
+	<div class="col-md-3"><label for="usuario_img">Imagen</label></div>
+	<div class="col-md-3"><input class="form-control usuario_im" type="text" name="usuario_img" data-ng-model='formData.usuario_img'  data-ng-class='{ error: usuarioForm.usuario_img.$invalid && !usuarioForm.$pristine }'>
+	<!--<span class="red" data-ng-show="!usuarioForm.$pristine && usuarioForm.usuario_img.$error.required">Contraseña es requiredo.</span>-->
+	</div>
+</div>
+<div class="form-group col-md-12 margin_10">
+	<div class="col-md-3"><label for="usuario_observacion">Observación</label></div>
+	<div class="col-md-3"><input class="form-control usuario_ob" type="text" name="usuario_observacion" data-ng-model='formData.usuario_observacion' data-ng-class='{ error: usuarioForm.usuario_observacion.$invalid && !usuarioForm.$pristine }'>
+	<!--<span class="red" data-ng-show="!usuarioForm.$pristine && usuarioForm.usuario_observacion.$error.required">Contraseña es requiredo.</span>-->
+	</div>
+</div>
+
+<div class="form-group col-md-12 margin_10">
+	<div class="col-md-3"><label for="usuario_correo">Correo</label></div>
+	<div class="col-md-3"><input type="email" class="correo_u" name="usuario_correo" data-ng-model='formData.usuario_correo' data-ng-class='{ error: usuarioForm.usuario_correo.$invalid && !usuarioForm.$pristine }'>
+	 <!--<div role="alert">
+      <span class="red" ng-show="!usuarioForm.$pristine && usuarioForm.usuario_correo.$error.required">
+        El campo debe llenarse!</span>
+      <span class="red" ng-show="usuarioForm.usuario_correo.$error.email">
+        No es valido como correo!</span>
+    </div>-->
+	</div>
+</div>
+
+<div class="col-md-12 margin_10">
+	<div class="col-md-6 text-center"><input type="submit" class='btn btn_afirmativo auto_width' ng-click='usuario_modificar_btn()'  value="Modificar"></div>
+</div>
+</form>

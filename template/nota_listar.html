@@ -1,0 +1,26 @@
+<h1 class="text-center col-xs-12 color_orange negritas margin_10_bottom">NOTAS</h1>
+<div >
+<div class="col-md-3 margin_10_bottom"><a href="#/nota_agregar" class="btn btn_afirmativo">AGREGAR NOTA</a></div><div class="col-md-3 margin_10_bottom"><a href="nota_agregarv2.html" class="btn btn_afirmativo">AGREGAR NOTA v2</a></div><div class="col-md-6 margin_10_bottom"><strong>BUSCADOR:</strong><input type="text" ng-model="filterOptions.filterText" /></div>
+<div class="col-xs-12 gridStyle text-center fondo_p" ng-grid="gridOptions"></div>
+</div>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+        <h4 class="modal-title">Advertencia</h4>
+      </div>
+      <div class="modal-body">
+        <p>¿Desea borrar este registro?</p>
+      </div>
+      <div class="modal-footer">
+      	<button type="button" class="btn btn_afirmativo" ng-click="nota_eliminar_modal()">Aceptar</button>
+        <button type="button" class="btn btn_afirmativo" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+
+  </div>
+</div>

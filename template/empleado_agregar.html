@@ -1,0 +1,92 @@
+<div class="col-md-12 text-right"><button id="boton_atras" class="btn btn_afirmativo" ng-click="volver()" title="Ir atrás"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span></button></div>
+<div class="col-md-12 text-center color_orange margin_10">AGREAGAR EMPLEADO</div>
+
+<form  name="empleadoForm">
+
+<!--<div class="form-group col-md-12 margin_10">
+	<div class="col-md-3"><label for="empleado_codigo">Código</label></div>
+	<div class="col-md-3"><input class="form-control" type="text" name="empleado_codigo" data-ng-model='formData.empleado_codigo' required  data-ng-class='{ error: empleadoForm.empleado_codigo.$invalid && !empleadoForm.$pristine }'><span class="red" data-ng-show="!empleadoForm.$pristine && empleadoForm.empleado_codigo.$error.required">Usuario es requiredo.</span>
+	</div>
+</div>-->
+
+<div class="form-group col-md-12 margin_10">
+	<div class="col-md-3"><label for="empleado_nombre">Nombre</label></div>
+	<div class="col-md-3"><input class="form-control" type="text" name="empleado_nombre" data-ng-model='formData.empleado_nombre' required data-ng-class='{ error: empleadoForm.empleado_nombre.$invalid && !empleadoForm.$pristine }'><span class="red" data-ng-show="!empleadoForm.$pristine && empleadoForm.empleado_nombre.$error.required">Usuario es requiredo.</span>
+	</div>
+</div>
+<div class="form-group col-md-12 margin_10">
+	<div class="col-md-3"><label for="empleado_apellido">Apellido</label></div>
+	<div class="col-md-3"><input type="text" class="form-control" name="empleado_apellido" data-ng-model='formData.empleado_apellido' required data-ng-class='{ error: empleadoForm.empleado_apellido.$invalid && !empleadoForm.$pristine }'><span class="red" data-ng-show="!empleadoForm.$pristine && empleadoForm.empleado_apellido.$error.required">Usuario es requiredo.</span>
+	</div>
+</div>
+<div class="form-group col-md-12 margin_10">
+	<div class="col-md-3"><label for="empleado_fechaNacimiento">Fecha Nacimiento</label></div>
+	<div class="col-md-3"><input type="text" class="form-control" name="empleado_fechaNacimiento" data-ng-model='formData.empleado_fechaNacimiento' required data-ng-class='{ error: empleadoForm.empleado_fechaNacimiento.$invalid && !empleadoForm.$pristine }'><span class="red" data-ng-show="!empleadoForm.$pristine && empleadoForm.empleado_fechaNacimiento.$error.required">Usuario es requiredo.</span>
+	</div>
+</div>
+<div class="form-group col-md-12 margin_10">
+	<div class="col-md-3"><label for="empleado_ci">C.I.</label></div>
+	<div class="col-md-3"><input type="text" class="form-control" name="empleado_ci" data-ng-model='formData.empleado_ci' required data-ng-class='{ error: empleadoForm.empleado_ci.$invalid && !empleadoForm.$pristine }'><span class="red" data-ng-show="!empleadoForm.$pristine && empleadoForm.empleado_ci.$error.required">Usuario es requiredo.</span></div>
+</div>
+<div class="form-group col-md-12 margin_10">
+	<div class="col-md-3"><label for="empleado_direccion">Dirección</label></div>
+	<div class="col-md-3"><input type="text" class="form-control" name="empleado_direccion" data-ng-model='formData.empleado_direccion' required data-ng-class='{ error: empleadoForm.empleado_direccion.$invalid && !empleadoForm.$pristine }'><span class="red" data-ng-show="!empleadoForm.$pristine && empleadoForm.empleado_telCel.$error.required">Usuario es requiredo.</span>
+	</div>
+</div>
+<div class="form-group col-md-12 margin_10">
+	<div class="col-md-3"><label for="empleado_telCel">Telefono o Celular</label></div>
+	<div class="col-md-3"><input type="text" class="form-control" name="empleado_telCel" data-ng-model='formData.empleado_telCel' required data-ng-class='{ error: empleadoForm.empleado_telCel.$invalid && !empleadoForm.$pristine }'><span class="red" data-ng-show="!empleadoForm.$pristine && empleadoForm.empleado_telCel.$error.required">Usuario es requiredo.</span>
+	</div>
+</div>
+<div class="form-group col-md-12 margin_10">
+	<div class="col-md-3"><label for="empleado_fechaIngreso">Fecha de inicio de trabajo</label></div>
+	<div class="col-md-3"><input type="text" class="form-control" name="empleado_fechaIngreso" data-ng-model='formData.empleado_fechaIngreso' data-ng-class='{ error: empleadoForm.empleado_fechaIngreso.$invalid && !empleadoForm.$pristine }'>
+	<!-- <span class="red" data-ng-show="!empleadoForm.$pristine && empleadoForm.empleado_fechaIngreso.$error.required">Usuario es requiredo.</span>-->
+	</div>
+</div>
+<div class="form-group col-md-12 margin_10">
+	<div class="col-md-3"><label for="empleado_fechaRetiro">Fecha de final de trabajo</label></div>
+	<div class="col-md-3"><input type="text" class="form-control" name="empleado_fechaRetiro" data-ng-model='formData.empleado_fechaRetiro'  data-ng-class='{ error: empleadoForm.empleado_fecharetiro.$invalid && !empleadoForm.$pristine }'>
+	<!-- <span class="red" data-ng-show="!empleadoForm.$pristine && empleadoForm.empleado_fechaRetiro.$error.required">Usuario es requiredo.</span> -->
+	</div>
+</div>
+<div class="form-group col-md-12 margin_10">
+	<div class="col-md-3"><label for="empleado_horario">Horario</label></div>
+	<div class="col-md-3"><input type="text" class="form-control" name="empleado_horario" data-ng-model='formData.empleado_horario'  data-ng-class='{ error: empleadoForm.empleado_horario.$invalid && !empleadoForm.$pristine }'>
+	<!--<span class="red" data-ng-show="!empleadoForm.$pristine && empleadoForm.empleado_horario.$error.required">Usuario es requiredo.</span>-->
+	</div>
+</div>
+<div class="form-group col-md-12 margin_10">
+	<div class="col-md-3"><label for="empleado_cargo">Cargo</label></div>
+	<div class="col-md-3"><input type="text" class="form-control" name="empleado_cargo" data-ng-model='formData.empleado_cargo' data-ng-class='{ error: empleadoForm.empleado_cargo.$invalid && !empleadoForm.$pristine }'>
+	<!-- <span class="red" data-ng-show="!empleadoForm.$pristine && empleadoForm.empleado_cargo.$error.required">Usuario es requiredo.</span>-->
+	</div>
+</div>
+<div class="form-group col-md-12 margin_10">
+	<div class="col-md-3"><label for="empleado_garante">Garante</label></div>
+	<div class="col-md-3"><input type="text" class="form-control" name="empleado_garante" data-ng-model='formData.empleado_garante' data-ng-class='{ error: empleadoForm.empleado_garante.$invalid && !empleadoForm.$pristine }'>
+	<!--<span class="red" data-ng-show="!empleadoForm.$pristine && empleadoForm.empleado_cargo.$error.required">Usuario es requiredo.</span>-->
+	</div>
+</div>
+<div class="form-group col-md-12 margin_10">
+	<div class="col-md-3"><label for="empleado_hojaVida">Hoja de vida</label></div>
+	<div class="col-md-3"><input type="text" class="form-control" name="empleado_hojaVida" data-ng-model='formData.empleado_hojaVida' data-ng-class='{ error: empleadoForm.empleado_hojaVida.$invalid && !empleadoForm.$pristine }'>
+	<!--<span class="red" data-ng-show="!empleadoForm.$pristine && empleadoForm.empleado_hojaVida.$error.required">Usuario es requiredo.</span>-->
+	</div>
+</div>
+<div class="form-group col-md-12 margin_10">
+	<div class="col-md-3"><label for="empleado_observacion">Observación</label></div>
+	<div class="col-md-3"><input type="text" class="form-control" name="empleado_observacion" data-ng-model='formData.empleado_observacion'  data-ng-class='{ error: empleadoForm.empleado_observacion.$invalid && !empleadoForm.$pristine }'>
+	<!--<span class="red" data-ng-show="!empleadoForm.$pristine && empleadoForm.empleado_observacion.$error.required">Usuario es requiredo.</span>-->
+	</div>
+</div>
+<div class="form-group col-md-12 margin_10">
+	<div class="col-md-3"><label for="empleado_sexo">Sexo</label></div>
+	<div class="col-md-3"><input type="text" class="form-control" name="empleado_sexo" data-ng-model='formData.empleado_sexo' data-ng-class='{ error: empleadoForm.empleado_sexo.$invalid && !empleadoForm.$pristine }'>
+	<!--<span class="red" data-ng-show="!empleadoForm.$pristine && empleadoForm.empleado_sexo.$error.required">Usuario es requiredo.</span>-->
+	</div>
+</div>
+<div class="col-md-12 margin_10">
+	<div class="col-md-6 text-center"><a href="" class="btn btn_afirmativo" ng-click="empleado_agregar()">Agregar</a></div>
+</div>
+</form>

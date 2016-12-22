@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html ng-app="program">
+<head>
+	<title>MANWIL S.R.L.</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- css -->
+	<link rel="stylesheet" type="text/css" href="bootstrap3/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery-ui.theme.css">
+  <link rel="stylesheet" type="text/css" href="css/jquery-ui.structure.css"> 
+  <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+	<link rel="stylesheet" media="screen" href="css/style.css">
+	<link rel="stylesheet" media="screen" href="css/style.custom.css">
+	<link rel="stylesheet" media="screen" href="css/program.style.css">
+	<link rel="shortcut icon" href="img/icon_manwil.ico">
+	<link href="css/simple-sidebar.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/css_ng-grid.css">
+    
+	<!-- scripts -->
+	<script src="js/jquery-3.1.1.min.js"></script>
+  <script src="bootstrap3/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/angularjs.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.datapicker.js"></script>
+  <script type="text/javascript" src="js/program.controller.js"></script>
+  <script type="text/javascript" src="js/ng-grid.js"></script>
+  <script type="text/javascript" src="js/angular-route.js"></script>
+  <script type="text/javascript" src="js/manwilcontroler.jquery.js"></script>
+  <script src="js/redondeo.decimal.js "></script>
+
+  <!--Load the AJAX API-->
+  <!--<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>-->
+
+</head>
+<body class="contenido">
+<div class="carga-info hidden_carga"> <img src="img/loader.gif" class="imagen-carga"></div>
+<!--para escritorio-->
+<div class="col-md-12">
+  <div class="col-md-12 hidden-xs margin_top_20 border_1">
+    <div class="grises logo_margin_top_10 col-md-2">
+      <img id="img_pegado" src="img/icon_manwil.png" class="img-responsive">
+      <img src="img/icon_manwil.png" class="img-responsive">
+    </div>
+    <div class="color_orange titulo_program_desktop col-md-8 text-center padding_titulo_desktop">
+      MANWIL TICONA S.R.L.
+    </div>
+    <div class="col-md-2 text-right padding_titulo_desktop">
+      <!--<span class="glyphicon glyphicon-user font_grif img_circle w_h_circle" aria-hidden="true"></span>--><a href="#" class="nombre_usuario_head color_naranja"  title="Salir del sistema"></a>
+    </div>
+  </div>
+</div>
+<div class="container">
+	<!--para movil-->
+	<div class="margin_titulo_cell padding_titulo_cell color_orange border_1 col-xs-12 text-center hidden-sm hidden-md hidden-lg"><div class="col-xs-1 padding_0 btn"><span class="glyphicon glyphicon-menu-hamburger font_grif_v w_h_circle_v menu-toggle" aria-hidden="true"></span></div><div class="col-xs-9">MANWIL TICONA S.R.L.</div><div class="col-xs-2 text-right padding_0"><a href="" class="nombre_usuario_head_2" title="Salir del sistema"><span class="glyphicon glyphicon-user font_grif img_circle w_h_circle" aria-hidden="true"></span></a></div></div>
+	<!--para movil-->
+	
+	<!--cuerpo-->
+	<!--para escritorio-->
+
+	<!--<div class="col-md-12 padding_nav_program "><div class="col-md-3 text-left col-xs-5 child_align_vertical"><img src="img/icon_manwil.png" class=""></div><div class="col-md-9 text-center titulo_program col-xs-7 child_align_vertical">MANWIL TICONA S.R.L.</div><div class="col-md-3 text-right col-xs-12 child_align_vertical"><span class="glyphicon glyphicon-user font_grif img_circle w_h_circle" aria-hidden="true"></span></div></div>-->
+
+</div>
+
+<div class="container_custom">
+	<div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper" class="wrapper_custom">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#/main">
+                        MENÚ
+                    </a>
+                </li>
+                <li>
+                    <a id="activa_nota" href="" class="">Notas</a>
+                </li>
+                <ul id="menu_nota" class="">
+                    <li class="sidebar-brand padding_left_10">
+                        <a href="#/nota_listar" id="color_orange_force_2">Listar Nota</a>
+                    </li>
+                    <li class="sidebar-brand padding_left_10">
+                       <a class="rol-otros" href="#/reporte_agregar" id="color_orange_force">Reporte Nota</a>
+                    </li>
+                </ul>
+                <li>
+                    <a class="rol-otros" href="#/producto">Producto</a>
+                </li>
+                <li>
+                    <a class="rol-otros" href="#/cliente">Cliente</a>
+                </li>
+                <li>
+                    <a class="rol-otros" href="#/empleado_listar">Empleado</a>
+                </li>
+                <li>
+                    <a class="rol-otros" href="#/usuario_listar">Usuario</a>
+                </li>
+                <li>
+                    <a class="rol-otros" href="#/almacen_listar">Almacen</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper" >
+            <button id="boton_menuEs" class="btn btn_super nivel_0 menu-toggle"  title="Menú"><span class="glyphicon glyphicon-transfer" aria-hidden="true"></span></button>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                         <div class="ng-view"></div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+</div>
+<!-- Modal -->
+<div id="myModalProgram" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+        <h4 class="modal-title">Advertencia</h4>
+      </div>
+      <div class="modal-body">
+        <p>¿Desea salir del sistema?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn_afirmativo salir_sesion" ">Aceptar</button>
+        <button type="button" class="btn btn_afirmativo" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Modal Error -->
+<div id="myModalProgramError" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+        <h4 class="modal-title">Error</h4>
+      </div>
+      <div class="modal-body">
+        <p>Verifique datos</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn_afirmativo" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+  <script>
+    $(".menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+</html>

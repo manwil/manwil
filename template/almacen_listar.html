@@ -1,0 +1,29 @@
+<div class="col-md-12 text-center color_orange">INVENTARIO</div>
+<div class="col-md-3 margin_10_bottom"><a href="#/almacen_agregar" class="btn btn_afirmativo">PRODUCTO ENTRANTE</a></div>
+<div class="col-md-12 text-right">Fecha: {{fecha}}</div>
+<div class="col-md-12 border_1_baja margin_top_bottom_10 padding_top_10">
+<div class="col-md-12 table-responsive">
+	<table class="table">
+		<thead>
+			<tr>
+				<th class="tamano_pedido text-center">Nº</th>
+				<th class="tamano_pedido text-center">CÓDIGO</th>
+				<th class="tamano_pedido text-center">NOMBRE</th>
+				<th class="tamano_pedido text-center">CANTIDAD ENTRADA</th>
+				<th class="tamano_pedido text-center">CANTIDAD SALIDA</th>
+				<th class="tamano_pedido text-center">SALDO</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in dataInventario">
+				<td class="text-center">{{item.n}}</td>
+				<td class="text-center">{{item.id_producto}}</td>
+				<td class="text-center">{{item.nombre_producto}}</td>
+				<td class="text-center">{{item.cantidad_entrada | number:2}} Kg.</td>
+				<td class="text-center">{{item.cantidad_salida | number:2}} Kg.</td>
+				<td class="text-center">{{item.cantidad_saldo | number:2}} Kg.</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</div>
