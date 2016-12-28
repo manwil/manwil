@@ -9,10 +9,14 @@
     <link rel="stylesheet" media="screen" href="css/style.css">
     <link rel="stylesheet" media="screen" href="css/style.custom.css">
     <link rel="stylesheet" media="screen" href="css/program.style.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.theme.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.structure.css"> 
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
     
   	<script src="js/angularjs.min.js"></script>
   	<script src="js/angular-route.js"></script>
   	<script src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.datapicker.js"></script>
     <script src="js/controller.notaAgregarv2.js"></script>
     <script src="js/NumeroALetras.js"></script>
     <script src="js/redondeo.decimal.js "></script>
@@ -222,7 +226,7 @@
       <div class="col-md-6"><label for="nota_numero">NOTA DE ENTREGA: </label></div><div class="col-md-6"><input type="text" class="form-control n_numero" name="nota_numero" ng-model='nota_numero' disabled="disabled"></div>
     </div>
     <div class="col-md-6 margin_10 form-group guardar_nota">
-      <div class="col-md-6"><label for="nota_fechaCreacion">FECHA DE CREACIÓN: </label></div><div class="col-md-6"><input type="text" name="nota_fechaCreacion" class="form-control n_fechaCreacion" ng-model='fecha_creacion'></div>
+      <div class="col-md-6"><label for="nota_fechaCreacion">FECHA DE CREACIÓN: </label></div><div class="col-md-6"><input type="text" name="nota_fechaCreacion" class="form-control n_fechaCreacion date_agrega" ng-model='fecha_creacion'></div>
     </div>
 
     <div class="col-md-6 margin_10 form-group guardar_nota">

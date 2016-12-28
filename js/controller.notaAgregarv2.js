@@ -64,6 +64,16 @@ app.controller("notaAgregarImprimirCtrl", function($scope, $http) {
     $scope.dataF = [{valor: "contado",nombre: "CONTADO"},{valor: "credito",nombre: "CREDITO" }];
     $scope.selectedFormaPago = $scope.dataF;  
     
+    $( ".date_agrega" ).datepicker({
+        monthNames: [ "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" ],
+        dayNames: [ "Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado" ],
+        dayNamesMin: [ "Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa" ],
+        dateFormat: "yy-mm-dd",
+        onClose: function ()
+        {
+            $("#focus-ini").focus();
+        }
+    });
 
     ////carga de vendedor para llenar nota
     $.ajax({
