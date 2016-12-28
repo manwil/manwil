@@ -732,7 +732,7 @@ app.controller("notaAgregarImprimirCtrl", function($scope, $http) {
                 $(".carga-info").css("display", "none");
                 setTimeout(function() {
                     location.reload();
-                }, 500);
+                }, 1000);
                 //$scope.$apply();
                 //$(".carga-info").css("display", "none");
             },
