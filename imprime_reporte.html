@@ -207,7 +207,8 @@
     <table class="table_custom border_1">
       <tr>
         <th class="align_center border_bottom_top padding_x">Nº</th>
-        <th class="align_center border_bottom_top padding_x">NOTA</th>
+        <th class="align_center border_bottom_top padding_x">NOTA SISTEMA</th>
+        <th class="align_center border_bottom_top padding_x">NOTA MANUAL</th>
         <th class="align_center border_bottom_top padding_x">CLIENTE</th>
         <th class="align_center border_bottom_top padding_x">AUTORIZADO</th>
         <th class="align_center border_bottom_top padding_x">FECHA DE CREACIÓN</th>
@@ -217,6 +218,7 @@
       <tr ng-repeat="item in todo_debe">
         <td class="align_center padding_5">{{item.id}}</td>
         <td class="align_center padding_5">{{item.id_nota}}</td>
+        <td class="align_center padding_5">{{item.id_nota_papel}}</td>
         <td class="align_center padding_5">{{item.cliente}}</td>
         <td class="align_center padding_5">{{item.autorizado}}</td>
         <td class="align_center padding_5">{{item.fecha_creacion}}</td>
